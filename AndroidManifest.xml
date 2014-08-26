@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
     <application
@@ -22,10 +22,10 @@
             </intent-filter>
         </activity>
       
-        <activity android:name=".views.TestActivity" android:label="test">
+        <activity android:name="com.luoyi.android.apidemo.view.AutoComplete1" android:label="Views / AutoComplete / demo1">
             <intent-filter >
                 <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.SAMPLE_CODE"/>
+                <category android:name="android.intent.category.shake"/>
             </intent-filter>
         </activity>
         
