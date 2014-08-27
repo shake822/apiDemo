@@ -7,13 +7,15 @@
 package com.luoyi.android.apidemo.view;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -22,7 +24,6 @@ import android.widget.Filter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import com.luoyi.android.apidemo.R;
 import com.luoyi.android.apidemo.bean.Person;
 
@@ -82,15 +83,15 @@ public class AutoComplete4 extends Activity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			Person p = getItem(position);
-			LinearLayout rl = new LinearLayout(getApplicationContext());
-			TextView name = new TextView(getApplicationContext());
-			name.setText(p.getName());
-			TextView tel = new TextView(getApplicationContext());
-			tel.setText(p.getTel());
-			rl.addView(name);
-			rl.addView(tel);
-			rl.setTag(p);
-			return rl;
+			LayoutInflater inflater = LayoutInflater
+					.from(getApplicationContext());
+			View personItemView = inflater.inflate(R.layout.person_item, null);
+			((TextView) personItemView.findViewById(R.id.person_item_name))
+					.setText(p.getName());
+			((TextView) personItemView.findViewById(R.id.person_item_tel))
+					.setText(p.getTel());
+			personItemView.setTag(p);
+			return personItemView;
 		}
 
 		/**
@@ -156,7 +157,7 @@ public class AutoComplete4 extends Activity {
 			@Override
 			public CharSequence convertResultToString(Object resultValue) {
 				Person p = (Person) resultValue;
-				return p.getName() + ":" + p.getTel();
+				return p.getName();
 			}
 
 		}
@@ -165,6 +166,25 @@ public class AutoComplete4 extends Activity {
 
 	private List<Person> getPerson() {
 		List<Person> users = new ArrayList<Person>();
+		HashMap<String, String> personTel = new HashMap<String, String>();
+		Cursor telC = getContentResolver().query(
+				ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null,
+				null, null);
+		if (telC.moveToFirst()) {
+			int idColumn = telC
+					.getColumnIndex(ContactsContract.CommonDataKinds.Phone.CONTACT_ID);
+			int telColumn = telC
+					.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
+			do {
+				String contactId = telC.getString(idColumn);
+				String number = telC.getString(telColumn);
+				if (!personTel.containsKey(contactId)) {
+					personTel.put(contactId, number);
+				}
+			} while (telC.moveToNext());
+		}
+		telC.close();
+
 		Cursor c = getContentResolver().query(
 				ContactsContract.Contacts.CONTENT_URI, null, null, null,
 				ContactsContract.Contacts.DISPLAY_NAME);
@@ -176,27 +196,12 @@ public class AutoComplete4 extends Activity {
 				Person person = new Person();
 				String contactId = c.getString(idColumn);
 				person.setName(c.getString(displayNameColumn));
-				person.setTel("110");
+				person.setTel(personTel.get(contactId));
 				users.add(person);
-				int phoneCount = c
-						.getInt(c
-								.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-				// if (phoneCount > 0) {
-				// Cursor telC = getContentResolver().query(
-				// ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-				// null,
-				// ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-				// + " = " + contactId, null, null);
-				// if (telC.moveToFirst()) {
-				// person.setTel(telC.getString(telC
-				// .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));
-				// }
-				// telC.close();
-				// }
 			} while (c.moveToNext());
 		}
-
 		c.close();
+		System.out.println(users.size());
 		return users;
 	}
 }

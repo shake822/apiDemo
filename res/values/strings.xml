@@ -4,5 +4,7 @@
     <string name="app_name">MyApiDemo</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="changecolor">改变颜色</string>
+    <string name="setwallpaper">設置壁紙</string>
 
 </resources>
