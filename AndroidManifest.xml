@@ -4,8 +4,11 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" >
+    </uses-permission>
+
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="10"
         android:targetSdkVersion="18" />
 
     <application
@@ -18,17 +21,76 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-      
-        <activity android:name="com.luoyi.android.apidemo.view.AutoComplete1" android:label="Views / AutoComplete / demo1">
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.shake"/>
+        <activity
+            android:name="com.luoyi.android.apidemo.app.WallpaperActivity"
+            android:label="App / Activity / WallPaper"
+            android:theme="@style/Theme.Wallpaper" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.app.Translucent"
+            android:label="App / Activity / Translucent"
+            android:theme="@style/Theme.Translucent" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete1"
+            android:label="Views / AutoComplete / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete2"
+            android:label="Views / AutoComplete / 底部" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete3"
+            android:label="Views / AutoComplete / 代码创建" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete4"
+            android:label="Views / AutoComplete / 代码创建,数据为联系人" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
             </intent-filter>
         </activity>
         
+         <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete5"
+            android:label="Views / AutoComplete / 邮箱自动补全" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

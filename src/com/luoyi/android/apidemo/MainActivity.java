@@ -3,6 +3,7 @@ package com.luoyi.android.apidemo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -24,18 +25,19 @@ public class MainActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		Intent intent = getIntent();
 		String path = intent.getStringExtra(INTENT_PATH);
-		if(path !=null && path.length()>0){
+		if (path != null && path.length() > 0) {
 			setTitle(path);
-			getActionBar().setHomeButtonEnabled(true);
-			getActionBar().setDisplayHomeAsUpEnabled(true);
+			// getActionBar().setHomeButtonEnabled(true);
+			// getActionBar().setDisplayHomeAsUpEnabled(true);
 		}
 		setListAdapter(new SimpleAdapter(this, getActivityList(path),
 				R.layout.activity_list_1, new String[] { "title" },
 				new int[] { R.id.tv_title }));
 	}
-	
+
 	/**
 	 * 获取列表的数据
+	 * 
 	 * @param prefix
 	 * @return
 	 */
@@ -51,6 +53,7 @@ public class MainActivity extends ListActivity {
 		} else {
 			prefixPath = prefix.split(LABEL_SPLITE);
 		}
+		Map<String, Boolean> entries = new HashMap<String, Boolean>();
 		for (ResolveInfo resolveInfo : lstAll) {
 			CharSequence labelSeq = resolveInfo.loadLabel(pm);
 			String label = labelSeq == null ? resolveInfo.activityInfo.name
@@ -58,16 +61,24 @@ public class MainActivity extends ListActivity {
 			String[] labelPath = label.split(LABEL_SPLITE);
 			String nextLabel = prefixPath == null ? labelPath[0]
 					: labelPath[prefixPath.length];
-			if ((prefixPath != null ? prefixPath.length : 0) == labelPath.length - 1) {
-				// 真实的Activity
-				addItem(lst,
-						nextLabel,
-						activityIntent(resolveInfo.activityInfo.packageName,
-								resolveInfo.activityInfo.name));
-			} else {
-				addItem(lst, nextLabel,
-						browseIntent(prefixPath == null ? nextLabel : prefix
-								+ LABEL_SPLITE + nextLabel));
+			if (prefixPath == null || label.startsWith(prefix)) {
+				System.out.println("prefix " + prefix + " next " + nextLabel);
+				if ((prefixPath != null ? prefixPath.length : 0) == labelPath.length - 1) {
+					// 真实的Activity
+					addItem(lst,
+							nextLabel,
+							activityIntent(
+									resolveInfo.activityInfo.packageName,
+									resolveInfo.activityInfo.name));
+				} else {
+					if (entries.get(nextLabel) == null) {
+						addItem(lst, nextLabel,
+								browseIntent(prefixPath == null ? nextLabel
+										: prefix + LABEL_SPLITE + nextLabel));
+						entries.put(nextLabel, true);
+					}
+
+				}
 			}
 		}
 		return lst;
@@ -75,6 +86,7 @@ public class MainActivity extends ListActivity {
 
 	/**
 	 * 添加列表数据
+	 * 
 	 * @param data
 	 * @param name
 	 * @param intent
@@ -94,7 +106,7 @@ public class MainActivity extends ListActivity {
 	 * @param componentName
 	 * @return
 	 */
- 
+
 	protected Intent activityIntent(String pkg, String componentName) {
 		Intent result = new Intent();
 		result.setClassName(pkg, componentName);
@@ -116,7 +128,8 @@ public class MainActivity extends ListActivity {
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		HashMap<String,Object> map =  (HashMap<String,Object> ) l.getItemAtPosition(position);
+		HashMap<String, Object> map = (HashMap<String, Object>) l
+				.getItemAtPosition(position);
 		Intent intent = (Intent) map.get("intent");
 		startActivity(intent);
 	}
