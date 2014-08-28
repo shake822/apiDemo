@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="changecolor">改变颜色</string>
     <string name="setwallpaper">設置壁紙</string>
+    <string name="select">请选择</string>
 
 </resources>

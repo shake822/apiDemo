@@ -9,7 +9,7 @@ package com.luoyi.android.apidemo.view;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import android.annotation.SuppressLint;
+
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
@@ -24,6 +24,7 @@ import android.widget.Filter;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.luoyi.android.apidemo.R;
 import com.luoyi.android.apidemo.bean.Person;
 
@@ -112,8 +113,6 @@ public class AutoComplete4 extends Activity {
 			 */
 			@Override
 			protected FilterResults performFiltering(CharSequence constraint) {
-				System.out.println("performFiltering  " + constraint
-						+ persons.size());
 				FilterResults results = new FilterResults();
 				if (constraint == null) {
 					results.values = persons;
@@ -141,7 +140,6 @@ public class AutoComplete4 extends Activity {
 			@Override
 			protected void publishResults(CharSequence constraint,
 					FilterResults results) {
-				System.out.println(results.values);
 				if (results.count > 0) {
 					clear();
 					addAll((List<Person>) results.values);
@@ -201,7 +199,6 @@ public class AutoComplete4 extends Activity {
 			} while (c.moveToNext());
 		}
 		c.close();
-		System.out.println(users.size());
 		return users;
 	}
 }

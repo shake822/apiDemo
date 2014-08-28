@@ -2,4 +2,5 @@
 <resources>
      <drawable name="translucent_background">#e0ec1212</drawable>
      <color name="Blank">#FF000000</color>
+      <color name="Red">#FFfd0000</color>
 </resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <RadioGroup android:id="@+id/radio_group_1" android:layout_width="match_parent"
+       android:checkedButton="@+id/radio_button_1"
+    android:layout_height="wrap_content">
+        
+        <RadioButton
+            android:text="选项一"
+          />
+		
+          
+        <RadioButton
+             android:id="@id/radio_button_1"
+            android:text="选项二"
+          />
+        
+          
+        <RadioButton
+            android:text="选项三"
+          />
+        
+          
+        <RadioButton
+            android:text="选项四"
+          />
+    </RadioGroup>
+	
+    <Button   android:layout_width="match_parent" android:text="显示值" android:onClick="showValue"
+            android:layout_height="wrap_content"/>
+    <HorizontalScrollView android:layout_width="match_parent"  android:layout_height="wrap_content">
+     <RadioGroup android:id="@+id/radio_group_2" android:layout_width="match_parent" android:orientation="horizontal"
+       android:checkedButton="@+id/radio_button_2"
+    android:layout_height="wrap_content">
+        
+        <RadioButton
+            android:text="选项一"
+          />
+		
+          
+        <RadioButton
+             android:id="@id/radio_button_2"
+            android:text="选项二"
+          />
+        
+          
+        <RadioButton
+            android:text="选项三"
+          />
+        
+          
+        <RadioButton
+            android:text="选项四"
+          />
+    </RadioGroup>
+    </HorizontalScrollView>
+</LinearLayout>
