@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.9.2+'
+    }
+}
+apply plugin: 'android'
+ 
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20"
+
+    signingConfigs {  
+      myConfig {  
+          storeFile file("luoyi.keystore")      //签名文件  
+          storePassword "shakE822"      
+          keyAlias "luoyi"               
+          keyPassword "shakE822"  //签名密码  
+      }  
+    }  
+     buildTypes{
+     release {
+      signingConfig  signingConfigs.myConfig
+     } 
+   }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+      //  instrumentTest.setRoot('tests')
+    }
+    
+    lintOptions {
+      abortOnError false
+        // if true, only report errors
+      ignoreWarnings true
+     }
+}

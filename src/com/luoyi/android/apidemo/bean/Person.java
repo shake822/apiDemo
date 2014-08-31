@@ -13,6 +13,7 @@ public class Person implements Serializable {
 
 	private String name;
 	private String tel;
+	private boolean expand;
 
 	/**
 	 * @return the name
@@ -44,4 +45,12 @@ public class Person implements Serializable {
 		this.tel = tel;
 	}
 
+	public boolean isExpand() {
+		return expand;
+	}
+
+	public void setExpand(boolean expand) {
+		this.expand = expand;
+	}
+	
 }

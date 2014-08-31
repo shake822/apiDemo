@@ -136,8 +136,23 @@
 				<category android:name="android.intent.category.shake" />
 			</intent-filter>
 		</activity>
-		
+		<activity android:name="com.luoyi.android.apidemo.view.ListActivity1"
+			android:label="Views / 列表 / 简单的">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
 
+				<category android:name="android.intent.category.shake" />
+			</intent-filter>
+		</activity>
+				<activity android:name="com.luoyi.android.apidemo.view.ListActivity2"
+			android:label="Views / 列表 / 带展开功能的">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+
+				<category android:name="android.intent.category.shake" />
+			</intent-filter>
+		</activity>
+		
 	</application>
 
 </manifest>
