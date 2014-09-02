@@ -1,158 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.luoyi.android.apidemo" android:versionCode="1"
-	android:versionName="1.0">
+    package="com.luoyi.android.apidemo"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
-	<uses-permission android:name="android.permission.READ_CONTACTS">
-	</uses-permission>
-	<uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
-	<uses-sdk android:minSdkVersion="10" android:targetSdkVersion="10" />
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="10" />
 
-	<application android:allowBackup="true" android:icon="@drawable/ic_launcher"
-		android:label="@string/app_name">
-		<activity android:name="com.luoyi.android.apidemo.MainActivity"
-			android:label="@string/app_name">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.luoyi.android.apidemo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.app.WallpaperActivity"
-			android:label="App / Activity / WallPaper" android:theme="@style/Theme.Wallpaper">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.app.WallpaperActivity"
+            android:label="App / Activity / WallPaper"
+            android:theme="@style/Theme.Wallpaper" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.app.SetWallpaperAcitvity"
-			android:label="App / Activity / 设置壁纸" android:theme="@style/Theme.Wallpaper">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.app.SetWallpaperAcitvity"
+            android:label="App / Activity / 设置壁纸"
+            android:theme="@style/Theme.Wallpaper" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.app.Translucent"
-			android:label="App / Activity / Translucent" android:theme="@style/Theme.Translucent">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.app.Translucent"
+            android:label="App / Activity / Translucent"
+            android:theme="@style/Theme.Translucent" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.AutoComplete1"
-			android:label="Views / AutoComplete / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete1"
+            android:label="Views / AutoComplete / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.AutoComplete2"
-			android:label="Views / AutoComplete / 底部">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete2"
+            android:label="Views / AutoComplete / 底部" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.AutoComplete3"
-			android:label="Views / AutoComplete / 代码创建">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete3"
+            android:label="Views / AutoComplete / 代码创建" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.AutoComplete4"
-			android:label="Views / AutoComplete / 代码创建,数据为联系人">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete4"
+            android:label="Views / AutoComplete / 代码创建,数据为联系人" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.AutoComplete5"
-			android:label="Views / AutoComplete / 邮箱自动补全">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.AutoComplete5"
+            android:label="Views / AutoComplete / 邮箱自动补全" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.SpinnerActivity1"
+            android:label="Views / Spinner / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-		<activity android:name="com.luoyi.android.apidemo.view.SpinnerActivity1"
-			android:label="Views / Spinner / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.SeekBarActivity"
+            android:label="Views / SeekBar / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.ScrollBarActivity1"
+            android:label="Views / ScrollBar / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-		<activity android:name="com.luoyi.android.apidemo.view.SeekBarActivity"
-			android:label="Views / SeekBar / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.RatingBarActivity1"
+            android:label="Views / RatingBar / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.RadioGroupActivity"
+            android:label="Views / RadioGroup / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-		<activity android:name="com.luoyi.android.apidemo.view.ScrollBarActivity1"
-			android:label="Views / ScrollBar / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.ProgressActivity1"
+            android:label="Views / ProgressBar / demo1" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		
-		<activity android:name="com.luoyi.android.apidemo.view.RatingBarActivity1"
-			android:label="Views / RatingBar / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity1"
+            android:label="Views / 列表 / 简单的" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		
-		<activity android:name="com.luoyi.android.apidemo.view.RadioGroupActivity"
-			android:label="Views / RadioGroup / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity2"
+            android:label="Views / 列表 / 带展开功能的" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.ProgressActivity1"
-			android:label="Views / ProgressBar / demo1">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity3"
+            android:label="Views / 列表 / 滚动" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		<activity android:name="com.luoyi.android.apidemo.view.ListActivity1"
-			android:label="Views / 列表 / 简单的">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-				<activity android:name="com.luoyi.android.apidemo.view.ListActivity2"
-			android:label="Views / 列表 / 带展开功能的">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-
-				<category android:name="android.intent.category.shake" />
-			</intent-filter>
-		</activity>
-		
-	</application>
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
