@@ -181,6 +181,24 @@
                 <category android:name="android.intent.category.shake" />
             </intent-filter>
         </activity>
+          <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity4"
+            android:label="Views / 列表 / 单选" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+            <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity5"
+            android:label="Views / 列表 / 添加" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
