@@ -199,6 +199,24 @@
                 <category android:name="android.intent.category.shake" />
             </intent-filter>
         </activity>
+           <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity6"
+            android:label="Views / 列表 / 懒加载" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
+          <activity
+            android:name="com.luoyi.android.apidemo.view.ListActivity7"
+            android:label="Views / 列表 / 下拉刷新" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.shake" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

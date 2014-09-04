@@ -62,7 +62,6 @@ public class MainActivity extends ListActivity {
 			String nextLabel = prefixPath == null ? labelPath[0]
 					: labelPath[prefixPath.length];
 			if (prefixPath == null || label.startsWith(prefix)) {
-				System.out.println("prefix " + prefix + " next " + nextLabel);
 				if ((prefixPath != null ? prefixPath.length : 0) == labelPath.length - 1) {
 					// 真实的Activity
 					addItem(lst,
